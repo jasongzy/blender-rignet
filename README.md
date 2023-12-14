@@ -58,6 +58,7 @@ pip install [package-name] -f https://pytorch-geometric.com/whl/torch-[version]+
 ```
 
 ```bash
+pip install torch
 pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.8.1+cu102.html
 pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.8.1+cu102.html
 pip install torch-cluster -f https://pytorch-geometric.com/whl/torch-1.8.1+cu102.html
