@@ -73,7 +73,7 @@ pip install torch-geometric
 The directory of each environment can be obtained via
 
 ```bash
-micromamba info --envs
+micromamba info
 ```
 
 The environment directory can be set in the "Additional Modules" setting of the bRigNet preferences
