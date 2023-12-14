@@ -46,25 +46,11 @@ micromamba activate brignet
 - Install PyTorch. If CUDA is installed, the CUDA version can be queried in a command prompt. For exampleIn this case, PyTorch can be installed in the command prompt via
 
 ```bash
-micromamba install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -c conda-forge
+micromamba install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia -c conda-forge
+micromamba install pyg -c pyg -c conda-forge
 ```
 
 More complete information on the PyTorch command line can be found at the [PyTorch website](https://pytorch.org/).
-
-- Install torch utilities. The syntax follows the pattern
-
-```bash
-pip install [package-name] -f https://pytorch-geometric.com/whl/torch-[version]+cu[cuda-version].html
-```
-
-```bash
-pip install torch
-pip install torch-scatter -f https://pytorch-geometric.com/whl/torch-1.8.1+cu102.html
-pip install torch-sparse -f https://pytorch-geometric.com/whl/torch-1.8.1+cu102.html
-pip install torch-cluster -f https://pytorch-geometric.com/whl/torch-1.8.1+cu102.html
-pip install torch-spline-conv -f https://pytorch-geometric.com/whl/torch-1.8.1+cu102.html
-pip install torch-geometric
-```
 
 The directory of each environment can be obtained via
 
