@@ -255,6 +255,9 @@ def setup_environment(environment_path, with_pip=True, torch_version="2.2.0", cu
     torch_install_script = ve_setup.torch_install_script(torch_version=torch_version, cuda_version=cuda_version)
     subprocess.check_call(torch_install_script)
 
+    numpy_inst_script = ve_setup.pkg_install_script('numpy')
+    subprocess.check_call(numpy_inst_script)
+
     # install torch-geometric
     if cuda_version in ('101', '102', '111'):
         # wheels are provided for these versions
