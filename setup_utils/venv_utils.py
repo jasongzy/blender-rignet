@@ -77,7 +77,7 @@ class VenvAutoSetup:
 
         return ba_file.name
 
-    def torch_install_script(self, torch_version="1.11.0", cuda_version="113", torch_url=""):
+    def torch_install_script(self, torch_version="2.2.0", cuda_version="118", torch_url=""):
         if not torch_url:
             torch_url = "https://download.pytorch.org/whl"
 
@@ -237,7 +237,7 @@ def install_headers(env_path, download_dir):
         shutil.copy(src_path, dst_path)
 
 
-def setup_environment(environment_path, with_pip=True, torch_version="1.11.0", cuda_version='113'):
+def setup_environment(environment_path, with_pip=True, torch_version="2.2.0", cuda_version='118'):
     ve_setup = VenvAutoSetup(environment_path)
     ve_setup.create_venv(with_pip=with_pip)
 
@@ -263,7 +263,7 @@ def setup_environment(environment_path, with_pip=True, torch_version="1.11.0", c
             print(f"Installing {pkg}")
             pkg_inst_script = ve_setup.pkg_install_script(pkg, additional_parameter=find_link)
             subprocess.check_call(pkg_inst_script)
-    elif cuda_version == '113':
+    elif cuda_version == '118':
         find_link = f"-f https://data.pyg.org/whl/torch-{torch_version}+cu{cuda_version}.html"
         for pkg in ("torch-scatter", "torch-sparse", "torch-cluster", "torch-geometric"):
             print(f"Installing {pkg}")
