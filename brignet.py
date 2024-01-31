@@ -33,13 +33,13 @@ class BrignetRemesh(bpy.types.Operator):
         new_ob = objects.mesh_from_collection(wm.brignet_highrescollection, name='brignet_remesh')
 
         remesh = new_ob.modifiers.new(name='remesh', type='REMESH')
-        remesh.voxel_size = 0.01
+        remesh.voxel_size = 0.005
 
         decimate = new_ob.modifiers.new(name='decimate', type='DECIMATE')
         decimate.use_collapse_triangulate = True
 
         context.evaluated_depsgraph_get()
-        decimate.ratio = 1800 / decimate.face_count
+        decimate.ratio = 3085 / decimate.face_count
 
         new_ob.hide_render = True
         wm.brignet_targetmesh = new_ob
