@@ -44,7 +44,7 @@ def nms_meanshift(pts_in, density, bandwidth):
     """
     Y = np.sum(((pts_in[np.newaxis, ...] - pts_in[:, np.newaxis, :]) ** 2), axis=2)
     sorted_ids = np.argsort(density)[::-1]
-    unique = np.ones(len(sorted_ids), dtype=np.bool)
+    unique = np.ones(len(sorted_ids), dtype=bool)
     dist = np.sqrt(Y)
     for i in sorted_ids:
         if unique[i]:

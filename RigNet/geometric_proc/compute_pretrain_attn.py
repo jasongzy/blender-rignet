@@ -216,7 +216,7 @@ if __name__ == '__main__':
         dist = np.sqrt(np.sum((vtx_ori[np.newaxis, ...] - hit_pos[:, np.newaxis, :])**2, axis=2))
         dist = (dist < 2e-2)
 
-        attn = np.zeros(len(vtx_ori), np.bool)
+        attn = np.zeros(len(vtx_ori), bool)
         for joint_id in np.unique(all_hit_ori_id):
             num_nn = np.sum(np.sum(dist[np.argwhere(all_hit_ori_id == joint_id).squeeze(), :], axis=0) > 0)
             if num_nn < 6:
