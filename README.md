@@ -37,7 +37,7 @@ At present, the CUDA toolkit from nVidia is required, it can be found at the
 
 A dependency installer is available in the preferences.
 
-- Install CUDA. At present prebuilt packages support versions 10.1, 10.2, 11.1
+- Install CUDA. At present prebuilt packages support versions 10.1, 10.2, 11.1, 12.6
 - In the addon preferences, make sure that the Cuda version is detected correctly.
 - Hit the "Install" button. It can take time!
 
