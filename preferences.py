@@ -76,6 +76,8 @@ class BrignetPrefs(bpy.types.AddonPreferences):
                 sys.path.append(mod_path)
                 BrignetPrefs._added_paths.append(mod_path)
 
+        sys.path.append(os.path.join(os.path.dirname(__file__), "RigNet"))
+
         BrignetPrefs.check_modules()
         return True
 

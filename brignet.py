@@ -196,11 +196,14 @@ class BrigNetPredict(bpy.types.Operator):
 
             if wm.brignet_highrescollection:
                 wm.brignet_highrescollection.hide_viewport = False
-                objects.copy_weights(wm.brignet_highrescollection.objects, wm.brignet_targetmesh)
+                is_same = wm.brignet_highrescollection.objects[0] is wm.brignet_targetmesh
+                if not is_same:
+                    objects.copy_weights(wm.brignet_highrescollection.objects, wm.brignet_targetmesh)
 
                 for ob in wm.brignet_highrescollection.all_objects:
                     ob.hide_set(False)
-                wm.brignet_targetmesh.hide_set(True)
+                if not is_same:
+                    wm.brignet_targetmesh.hide_set(True)
 
             return {'FINISHED'}
 

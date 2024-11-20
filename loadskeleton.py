@@ -42,9 +42,12 @@ class LoadRignetSkeleton(bpy.types.Operator):
         skel_info = Info(filename=wm.brignet_skel_path)
 
         if os.path.isfile(wm.brignet_obj_path):
-            bpy.ops.import_scene.obj(filepath=wm.brignet_obj_path, use_edges=True, use_smooth_groups=True,
-                                     use_groups_as_vgroups=False, use_image_search=True, split_mode='OFF',
-                                     axis_forward='-Z', axis_up='Y')
+            try:
+                bpy.ops.import_scene.obj(filepath=wm.brignet_obj_path, use_edges=True, use_smooth_groups=True,
+                                        use_groups_as_vgroups=False, use_image_search=True, split_mode='OFF',
+                                        axis_forward='-Z', axis_up='Y')
+            except:
+                bpy.ops.wm.obj_import(filepath=wm.brignet_obj_path, forward_axis='NEGATIVE_Z', up_axis='Y', validate_meshes=False)
 
             mesh_obj = context.selected_objects[0]
         else:
