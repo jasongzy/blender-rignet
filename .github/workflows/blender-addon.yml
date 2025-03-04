@@ -19,7 +19,7 @@ jobs:
         uses: blenderkit/blender-addon-build@main
         with:
           name: ${{ github.event.repository.name }}
-          exclude-files: ".git;.github;README.md;.gitignore;LICENSE;pyproject.toml;setup.py"
+          exclude-files: ".git;.github"
 
   Release:
     runs-on: ubuntu-latest
